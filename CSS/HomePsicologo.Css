@@ -5,50 +5,16 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     background-color: #342C5C;
     display: flex;
     height: 100vh;
 }
 
-aside {
-    display: flex;
-    justify-content: center;
-    width: 20%;
-    background-color: #51438E;
-    height: 100vh;
-}
-
-aside ul{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 30px;
-}
-
-ul li {
-    list-style: none;
-    margin-top: 10px;
-}
-
-ul li h3{
-    font-size: 20px;
-    font-weight: bold;
-}
-
-ul li img{
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-}
-
-
-
-
 section {
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 100%;
     height: 100vh;
     background-color: rgb(255, 255, 255);
     overflow-y: scroll;
@@ -59,23 +25,26 @@ section {
     justify-content: space-between;
     align-items: center;
     background-color: #a895f9;
-    height: 10%;
+    height: 15%;
     padding: 25px;
 }
 
 .header h1 {
-    font-size: 22px;
+    font-size: 35px;
     font-weight: bold;
     padding: 10px;
 }
 
-.iconos img{
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    margin-left: 20px;
-    margin-top: 20px;
+button {
     background: none;
+    border: none;
+    cursor: pointer;
+}
+
+i{
+    font-size: 30px;
+    color: black;
+    cursor: pointer;
 }
 
 .cuerpo {
@@ -137,13 +106,11 @@ color: white;
     background-color: #c4cdd7;
 }
 
-.boton i {
-    display: flex;
-    font-size: 20px;
+.boton i{
+    color: white;
+    font-size: 25px;
     margin-right: 10px;
-    align-items: center;
 }
-
 .cuerpo .expedientes {
     width: 100%;
     background-color: #ffffff;
@@ -185,4 +152,89 @@ tbody tr:hover{
 }
 
 
+.menu {
+    display: flex;
+    position: fixed;
+    left: -550px; 
+    flex-direction: column;
+    width: 25%;
+    height: 100vh;
+    background-color: white;
+    border-right: 1px solid #e6e6e6;
+    transition: left 0.3s ease; 
+}
+
+.menu.active {
+    left: 0; 
+}
+
+.aside-cabecera{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.cerrar{
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+
+.aside-cuerpo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.info-Personal{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.info-Personal h1{
+    margin-top: 10px;
+}
+
+
+.Rol {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+}
+
+.Rol .icono {
+    margin-right: 15px; 
+}
+
+.Rol .texto-rol {
+    display: flex;
+    flex-direction: column;
+}
+
+ .inicioSesion{
+    text-decoration: none;
+    color: black;
+    width: 80%;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #c0a8f9;
+}
+
+img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.inicioSesion{
+    margin-top: 30px;
+}
 

@@ -8,20 +8,17 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-   
-    <aside id="menuAside" class="aside oculto">
-        <ul id="userInfo">
-            <li><img src="/IMAGENES/LogoUTP.png" alt=""></li>
-            <li><h3>Kevin Linares</h4></li>
-        </ul>
-    </aside>
 
     <Section>
         <div class="header">
+            <button id="menuBoton">
+                <i class='bx bx-menu'></i>
+            </button>
             <h1>Dirección de orientación Psicológica</h1>
             <div class="iconos">
-            <a href="https://www.google.com"><img src="/IMAGENES/lupa.png" alt=""></a>
-            <button><img src="/IMAGENES/User.png" alt="Usuario" id="UserIcono"></button>
+            <a href="https://www.google.com">
+                <i class='bx bx-search' ></i>
+            </a>
         </div> 
         </div>   
 
@@ -34,7 +31,7 @@
             <div class="nuevaCarpeta">
             <a href="#" class="boton">
                 <i class='bx bxs-plus-circle' ></i>
-                Nueva Carpeta
+                Registrar Paciente
             </a>
             </div>
         </div>
@@ -46,9 +43,7 @@
                     <thead>
                         <tr>
                             <th>Nombre</th>
-                            <th>Edad</th>
-                            <th>Fecha de Registro</th>
-                            <th>Última Consulta</th>
+                            <th>Cédula</th>
                         </tr>
                     </thead>
                     <tbody id="tabla-pacientes">
@@ -59,6 +54,56 @@
         </div>
     </Section>
 
+    <aside id="menu" class="menu">
+        <div class="aside">
+            <div class="aside-cabecera">
+                <h2>Perfil de Usuario</h2>
+                <button class="cerrar" id="cerrar">
+                    <i class='bx bx-x' ></i>
+                </button>
+            </div>
+
+            <div class="aside-cuerpo">
+                <div class="info-Personal">
+                    <img src="https://images.unsplash.com/photo-1731332066050-47efac6e884f?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                    <h1>Kevin Linares</h1>
+                </div>
+
+                <div class="Rol">
+                    <div class="icono">
+                        <i class='bx bx-user' ></i>
+                    </div>
+                    <div class="texto-rol">
+                        <h3>Cédula</h3>
+                        <p>8-1004-140</p>
+                    </div>
+                </div>
+                
+                <div class="Rol">
+                    <div class="icono">
+                        <i class='bx bx-user' ></i>
+                    </div>
+                    <div class="texto-rol">
+                        <h3>Rol</h3>
+                        <p>Psicologo</p>
+                    </div>
+                </div>
+                <div class="Rol">
+                    <div class="icono">
+                        <i class='bx bx-envelope'></i>
+                    </div>
+                    <div class="texto-rol">
+                        <h3>Correo</h3>
+                        <p>kevin.feewffewgfew.com</p>
+                    </div>
+                </div>
+                <a href="/HTML/InicioSesion.html" class="inicioSesion">
+                    <i class='bx bx-log-out' ></i>
+                    Cerrar Sesion
+                </a>
+            </div>
+        </div>
+    </aside>
     <script src="/JAVASCRIPT/HomePsicologo.js"></script>
 </body>
 </html>

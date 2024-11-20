@@ -10,7 +10,7 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url(https://utp.ac.pa/sites/default/files/fachada_utp.jpg);
+    background-image: url(/IMAGENES/Universidad.png);
     background-size: cover;
 }
 
@@ -27,7 +27,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url(https://utp.ac.pa/sites/default/files/fachada_utp.jpg);
+    background-image: url(/IMAGENES/Universidad.png);
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
 }
@@ -81,7 +81,7 @@ button{
 }
 
 button:hover{
-    background-color: #c63ab3;
+    background-color: #8d7fe1;
     cursor: pointer;
 }
 

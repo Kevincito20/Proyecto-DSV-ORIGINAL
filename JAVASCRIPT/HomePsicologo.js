@@ -1,49 +1,86 @@
-const pacientes = [
-    { nombre: "Juan Pérez", edad: 34, registro: "12/01/2023", consulta: "10/10/2023", url: "RegistroJuanPerez.html" },
-    { nombre: "María González", edad: 29, registro: "15/02/2023", consulta: "05/09/2023", url: "RegistroMariaGonzalez.html" },
-    { nombre: "Carlos López", edad: 41, registro: "20/03/2023", consulta: "08/11/2023", url: "RegistroCarlosLopez.html" },
-    { nombre: "Laura Martínez", edad: 25, registro: "18/04/2023", consulta: "12/10/2023", url: "RegistroLauraMartinez.html" },
-    { nombre: "Juan Pérez", edad: 34, registro: "12/01/2023", consulta: "10/10/2023", url: "RegistroJuanPerez.html" },
-    { nombre: "María González", edad: 29, registro: "15/02/2023", consulta: "05/09/2023", url: "RegistroMariaGonzalez.html" },
-    { nombre: "Carlos López", edad: 41, registro: "20/03/2023", consulta: "08/11/2023", url: "RegistroCarlosLopez.html" },
-    { nombre: "Laura Martínez", edad: 25, registro: "18/04/2023", consulta: "12/10/2023", url: "RegistroLauraMartinez.html" },
-    { nombre: "Juan Pérez", edad: 34, registro: "12/01/2023", consulta: "10/10/2023", url: "RegistroJuanPerez.html" },
-    { nombre: "María González", edad: 29, registro: "15/02/2023", consulta: "05/09/2023", url: "RegistroMariaGonzalez.html" },
-    { nombre: "Carlos López", edad: 41, registro: "20/03/2023", consulta: "08/11/2023", url: "RegistroCarlosLopez.html" },
-    { nombre: "Laura Martínez", edad: 25, registro: "18/04/2023", consulta: "12/10/2023", url: "RegistroLauraMartinez.html" }
-];
+//ESTO HACE QUE EL MENU SE DESPLIEGUE Y SE OCULTE
+const menuBoton = document.getElementById('menuBoton'); 
+const menu = document.getElementById('menu');
+const cerrarMenu = document.getElementById('cerrar'); 
 
-// Referencia al cuerpo de la tabla
-const tablaPacientes = document.getElementById("tabla-pacientes");
+function AbrirMenu() {
+    menu.classList.add('active'); 
+}
+function CerrarMenu() {
+    menu.classList.remove('active'); 
+}
+menuBoton.addEventListener('click', AbrirMenu);
+cerrarMenu.addEventListener('click', CerrarMenu);
 
-// Función para rellenar la tabla
-function llenarTabla(datos) {
-    datos.forEach(paciente => {
-        // Crear una fila
-        const fila = document.createElement("tr");
-        fila.onclick = () => window.location.href = paciente.url;
+//FETCH PARA TRAER LOS DATOS DE LOS PACIENTES DEPENDIENDO DEL PSICOLOGO
+async function VisualizarDocumentos() {
+    const nombre = document.getElementById("nombre").value.trim();
+    const apellido = document.getElementById("apellido").value.trim();
+    const cedula = document.getElementById("cedula").value.trim(); 
 
-        // Crear y añadir celdas
-        const celdaNombre = document.createElement("td");
-        celdaNombre.innerHTML = `<i class='bx bx-user'></i> ${paciente.nombre}`;
-        fila.appendChild(celdaNombre);
-
-        const celdaEdad = document.createElement("td");
-        celdaEdad.textContent = paciente.edad;
-        fila.appendChild(celdaEdad);
-
-        const celdaRegistro = document.createElement("td");
-        celdaRegistro.textContent = paciente.registro;
-        fila.appendChild(celdaRegistro);
-
-        const celdaConsulta = document.createElement("td");
-        celdaConsulta.textContent = paciente.consulta;
-        fila.appendChild(celdaConsulta);
-
-        // Añadir la fila a la tabla
-        tablaPacientes.appendChild(fila);
-    });
+    if (!nombre || !apellido || !cedula) {
+        alert("DATOS NO ENCONTRADOS.");
+        return false; 
+    }
+    return true; 
 }
 
-// Llamar a la función para rellenar la tabla con los datos simulados
-llenarTabla(pacientes);
+async function obtenerDatos() {
+
+    const validacion = await VisualizarDocumentos();
+    if (!validacion) {
+        return; 
+    }
+
+    const url = "https://tu-api-url.com/api/datosPacientes";
+
+    try {
+        const respuesta = await fetch(url, {
+            headers: { 'Content-Type': 'application/json' }
+        });
+
+        if (respuesta.ok) {
+            const respuestaJson = await respuesta.json();
+
+            if (respuestaJson.acceso) {
+                alert("BIENVENIDO!");
+
+                const tablaPacientes = document.getElementById("tabla-pacientes");
+
+
+                respuestaJson.pacientes.forEach((paciente) => {
+                    
+                    const fila = document.createElement("tr");
+                    fila.onclick = () => window.location.href = paciente.url;
+
+                    const celdaNombre = document.createElement("td");
+                    celdaNombre.innerHTML = `<i class='bx bx-user'></i> ${paciente.nombre}`;
+                    fila.appendChild(celdaNombre);
+
+                    const celdaApellido = document.createElement("td");
+                    celdaApellido.innerHTML = `<i class='bx bx-user'></i> ${paciente.apellido}`;
+                    fila.appendChild(celdaApellido);
+
+                    const celdaCedula = document.createElement("td");
+                    celdaCedula.innerHTML = `<i class='bx bx-id-card'></i> ${paciente.cedula}`;
+                    fila.appendChild(celdaCedula);
+
+                    tablaPacientes.appendChild(fila);
+                });
+            } else {
+                alert("Datos no encontrados.");
+            }
+        } else {
+            alert("Error en la respuesta de la API.");
+        }
+    } catch (error) {
+        console.error("Error:", error);
+        alert("Ocurrió un error al conectar con la API.");
+    }
+}
+
+document.getElementById("HomePsicologo").addEventListener("click", obtenerDatos);
+
+
+
+
