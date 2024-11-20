@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="/CSS/InicioSesion.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="Contenedor">
+        <div class="seccion-izquierda">
+            <div class="informacion">
+                
+            </div>
+        </div>
+
+        <div class="seccion-derecha">
+            <div class="formulario">
+                <h2>Dirección de orientación Psicológica</h2>
+                <img src="/IMAGENES/LogoUTP.png" alt="Logo UTP">
+                <form id="formInicioSesion" method="POST">
+                    <div class="campo">
+                        <i class='bx bxs-user'></i>
+                        <input type="text" id="Usuario" name="Usuario" placeholder="Ingrese Usuario" required>
+                    </div>
+                    <div class="campo">
+                        <div class="mensaje-error" id="mensajeError"></div>
+                        <i class='bx bx-lock-alt'></i>
+                        <input type="password" id="Contraseña" name="Contraseña" placeholder="Ingrese Contraseña" required>
+                    </div>
+                    <button type="button" id="iniciarSesion">Iniciar Sesión</button>
+                </form>
+            </div>      
+        </div>
+    </div>
+
+    <script src="/JAVASCRIPT/InicioSesion.js"></script>
+</body>
+</html>

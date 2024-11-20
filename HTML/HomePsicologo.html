@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expedientes de Pacientes</title>
+    <link rel="stylesheet" href="/CSS/HomePsicologo.Css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+   
+    <aside id="menuAside" class="aside oculto">
+        <ul id="userInfo">
+            <li><img src="/IMAGENES/LogoUTP.png" alt=""></li>
+            <li><h3>Kevin Linares</h4></li>
+        </ul>
+    </aside>
+
+    <Section>
+        <div class="header">
+            <h1>Dirección de orientación Psicológica</h1>
+            <div class="iconos">
+            <a href="https://www.google.com"><img src="/IMAGENES/lupa.png" alt=""></a>
+            <button><img src="/IMAGENES/User.png" alt="Usuario" id="UserIcono"></button>
+        </div> 
+        </div>   
+
+        <div class="secciones">
+            <div class="busqueda">
+                <input type="search" placeholder="Buscar Paciente" id="buscarPaciente" class="busqueda">
+
+            </div>
+
+            <div class="nuevaCarpeta">
+            <a href="#" class="boton">
+                <i class='bx bxs-plus-circle' ></i>
+                Nueva Carpeta
+            </a>
+            </div>
+        </div>
+        
+        <div class="cuerpo">
+            <div class="expedientes">
+                <h2>Listado de Pacientes</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Edad</th>
+                            <th>Fecha de Registro</th>
+                            <th>Última Consulta</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla-pacientes">
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </Section>
+
+    <script src="/JAVASCRIPT/HomePsicologo.js"></script>
+</body>
+</html>

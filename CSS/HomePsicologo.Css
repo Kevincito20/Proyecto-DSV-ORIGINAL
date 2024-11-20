@@ -1,0 +1,188 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #342C5C;
+    display: flex;
+    height: 100vh;
+}
+
+aside {
+    display: flex;
+    justify-content: center;
+    width: 20%;
+    background-color: #51438E;
+    height: 100vh;
+}
+
+aside ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+ul li {
+    list-style: none;
+    margin-top: 10px;
+}
+
+ul li h3{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+ul li img{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+
+
+
+
+section {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+    overflow-y: scroll;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #a895f9;
+    height: 10%;
+    padding: 25px;
+}
+
+.header h1 {
+    font-size: 22px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.iconos img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-left: 20px;
+    margin-top: 20px;
+    background: none;
+}
+
+.cuerpo {
+    display: flex;
+    margin: 15px;
+}
+
+.secciones{
+    display: flex;
+    justify-content: space-between;
+    margin: 15px;
+}
+
+.secciones .busqueda{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.busqueda{
+    display: flex;
+    align-items: center;
+    width: 400px;
+    padding: 10px;
+}
+
+.busqueda input{
+    width: 100%;
+    border: 1px solid #c4cdd7;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.secciones .nuevaCarpeta{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nuevaCarpeta{
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 200px;
+}
+
+.boton {
+display: flex;
+width: 100%;
+height: 100%;
+justify-content: center;
+align-items: center;  
+border-radius: 12px;
+color: white;
+background-color: black;
+text-decoration: none;
+color: white;  
+}
+
+.boton:hover {
+    background-color: #c4cdd7;
+}
+
+.boton i {
+    display: flex;
+    font-size: 20px;
+    margin-right: 10px;
+    align-items: center;
+}
+
+.cuerpo .expedientes {
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+tbody tr:hover{
+    cursor: pointer;
+    background-color: #dddddd;
+}
+
+.cuerpo .expedientes table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.cuerpo .expedientes th {
+    text-align: left;
+    color: #666666;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #dddddd;
+}
+
+.cuerpo .expedientes td {
+    padding: 15px 10px;
+    font-size: 16px;
+    color: #333333;
+    border-bottom: 1px solid #dddddd;
+}
+
+.cuerpo .expedientes tr:last-child td {
+    border-bottom: none;
+}
+
+
+

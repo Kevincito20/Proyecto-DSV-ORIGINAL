@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de Ejemplo</title>
+    <link rel="stylesheet" href="estilos.css"> <!-- Vincula tu archivo CSS aquí -->
+    <style>
+        /* Aquí está el CSS si no quieres usar un archivo separado */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        .cuerpo {
+            display: flex;
+            margin: 20px;
+        }
+
+        .cuerpo .expedientes {
+            width: 100%;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .cuerpo .expedientes table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .cuerpo .expedientes th {
+            text-align: left;
+            color: #666666;
+            font-size: 14px;
+            text-transform: uppercase;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #dddddd;
+        }
+
+        .cuerpo .expedientes td {
+            padding: 15px 10px;
+            font-size: 16px;
+            color: #333333;
+            border-bottom: 1px solid #dddddd;
+        }
+
+        .cuerpo .expedientes tr:last-child td {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="cuerpo">
+        <div class="expedientes">
+            <h2>Listado de Pacientes</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Edad</th>
+                        <th>Fecha de Registro</th>
+                        <th>Última Consulta</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Juan Pérez</td>
+                        <td>34</td>
+                        <td>12/01/2023</td>
+                        <td>10/10/2023</td>
+                    </tr>
+                    <tr>
+                        <td>María González</td>
+                        <td>29</td>
+                        <td>15/02/2023</td>
+                        <td>05/09/2023</td>
+                    </tr>
+                    <tr>
+                        <td>Carlos López</td>
+                        <td>41</td>
+                        <td>20/03/2023</td>
+                        <td>08/11/2023</td>
+                    </tr>
+                    <tr>
+                        <td>Laura Martínez</td>
+                        <td>25</td>
+                        <td>18/04/2023</td>
+                        <td>12/10/2023</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
