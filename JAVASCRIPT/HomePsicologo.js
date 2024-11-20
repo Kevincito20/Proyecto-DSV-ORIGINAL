@@ -12,18 +12,6 @@ function CerrarMenu() {
 menuBoton.addEventListener('click', AbrirMenu);
 cerrarMenu.addEventListener('click', CerrarMenu);
 
-//FETCH PARA TRAER LOS DATOS DE LOS PACIENTES DEPENDIENDO DEL PSICOLOGO
-async function VisualizarDocumentos() {
-    const nombre = document.getElementById("nombre").value.trim();
-    const apellido = document.getElementById("apellido").value.trim();
-    const cedula = document.getElementById("cedula").value.trim(); 
-
-    if (!nombre || !apellido || !cedula) {
-        alert("DATOS NO ENCONTRADOS.");
-        return false; 
-    }
-    return true; 
-}
 
 async function obtenerDatos() {
 

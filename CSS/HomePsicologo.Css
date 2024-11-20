@@ -24,7 +24,7 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #a895f9;
+    background-color: #4164E2;
     height: 15%;
     padding: 25px;
 }
@@ -225,7 +225,7 @@ tbody tr:hover{
     border: 1px solid black;
     border-radius: 5px;
     text-align: center;
-    background-color: #c0a8f9;
+    background-color: #4164E2;
 }
 
 img{
