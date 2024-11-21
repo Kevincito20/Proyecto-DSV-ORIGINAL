@@ -1,0 +1,203 @@
+/* ESTILOS BASE */
+body {
+    font-family: 'Open Sans', sans-serif;
+    width: 100%;
+    margin: 0 auto;
+    background-color:f4f4f4 ;
+}
+
+/* ESTILOS DEL HEADER */
+header {
+    display: flex;
+    align-items: start;
+    padding: 37px 20px;
+    background-color: #f4f4f4;
+}
+
+.logo img {
+    margin-left: 50px;
+    height: 100px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+nav {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+
+}
+
+.navegacion {
+    display: flex;
+        gap: 15px;
+    align-items: center;
+
+}
+
+.titulo {
+
+    margin: 0;
+    margin-left: 30px;
+
+}
+
+#linkTitulo {
+    text-decoration: none;
+    color: black;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.5em;
+}
+
+
+/* SECCION PRINCIPAL CONTENIDOS*/
+section {
+    margin-top: 30px;
+    padding: 0 40px;
+    position: relative;
+}
+
+#id-paciente{
+
+    font-size: 30px;
+    margin: 10px;
+    
+}
+
+.paciente  {
+    margin-left: 60px;
+}
+
+.cont-expedientes{
+    margin-left: 60px;
+    padding: 20px;
+}
+.cont-vesion {
+    margin: 15px 0;
+}
+
+
+/*paciente-expediente proviene del JS ELEMENTO TR*/
+.paciente-expediente {
+    display: flex;
+    width: 1300px;
+    margin: 10px 0px;
+    padding: 15px;
+    background-color: #ffffff;
+    align-items: center;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+    margin-right: 8px;
+
+}
+
+.cont-vesion :hover{
+
+    background-color: #e5ece6;
+    transform: scale(1.05);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 1.1);
+
+
+}
+
+
+/* ESTILOS PARA LOS BOTONES */
+.botones-container {
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px 30px;
+}
+
+
+#bt-actualizar {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 10px 40px;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid #e0e0e0;
+}
+
+#bt-actualizar:hover{
+    transform: scale(1.05);
+    background-color:#e5dee7;
+    color: rgb(255, 255, 255);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+/* ESTILO DEL FOOTER */
+footer {
+    display: flex;
+    align-items: center;
+    padding: 37px 20px;
+    margin-top: 40px;
+    background-color: #fff;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);  
+}
+
+.descInferior {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex: 1;
+}
+
+.descInferior img {
+    height: 100px;
+    width: auto;
+}
+
+.textoInferior {
+    flex: 1;
+    margin-right: 100px;
+    line-height: 1.6;
+}
+
+
+
+/* ESTILOS DE LINKS */
+a {
+    text-decoration: none;
+    color: black;
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.3s ease;
+}
+
+#linkTitulo:hover {
+    color: #285AEB;
+
+}
+
+#Linkbusqueda:hover {
+    background: #285AEB;
+
+}
+
+#linkredes:hover {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    background-clip: text;
+    color: transparent;
+}
+
+#linkContacto:hover {
+    background: rgb(4, 243, 4);
+    background-clip: text;
+    color: transparent;
+}
+
+/* ESTILOS DE ICONOS */
+i {
+    font-size: 1.2rem;
+}

@@ -1,62 +1,66 @@
-async function VerificarDatos() {
 
-    const version = document.getElementById("VersionExpediente").value.trim(); 
+// VARIABLE GLOBARL PARA GUARDAR EL NOMBRE. EN ESTE CASO SE CAMBIA POR EL ID DEL PSICOLOGO.
 
-    if (!version) {
-        alert("SIN VERSIONES ANTERIORES.");
-        return false; 
-    }
-    return true; 
-}
+let userSeleccionado = null;
 
-async function obtenerVersionesExp() {
-
-    const validacion = await VisualizarDocumentos();
-    if (!validacion) {
-        return; 
-    }
-
-    const url = "https://tu-api-url.com/api/VersionExpediente";
+async function ObtenerExpedientes() {
+    const url = "https://jsonplaceholder.typicode.com/users"; 
 
     try {
-        const respuesta = await fetch(url, {
-            headers: { 'Content-Type': 'application/json' }
+        
+        const response = await fetch(url);
+        const users = await response.json();
+        const contenedorV = document.getElementById("cont-version");
+        
+        
+        contenedorV.innerHTML = '';
+
+        users.forEach((user) => {
+            const element = document.createElement('div'); 
+            element.className = "paciente-expediente";
+
+            // VAINA PARA PASAR EL ID DEL PSICOLOGO.
+            element.addEventListener('click', () =>{
+                userSeleccionado = user;
+                console.log("man seleccionado:", userSeleccionado.id);
+            })
+            element.innerHTML = `
+                <i class="fa-solid fa-user-pen fa-flip-horizontal fa-xs" style="color: #000000; margin-right: 8px;"></i>
+                Fecha de modificación: ${user.username}, ${user.name}
+            `;
+
+            contenedorV.appendChild(element);
         });
-
-        if (respuesta.ok) {
-            const respuestaJson = await respuesta.json();
-
-            if (respuestaJson.acceso) {
-                alert("EXPEDIENTES!");
-
-                respuestaJson.forEach((paciente) => {
-                    const bt = document.createElement("tr");
-                    bt.className = "paciente-expediente";
-            
-                    bt.innerHTML = `
-                        <i class="fa-solid fa-user-pen fa-flip-horizontal fa-xs" style="color: #000000; margin-right: 8px;"></i>
-                        Fecha de modificación: ${paciente.fecha}
-                    `;
-            
-         
-                    bt.addEventListener("click", () => {
-                        window.location.href = "https://www.google.com"; // CAMBIAR A LA PANTALLA VER MAS.
-                        bt.style.backgroundColor = "purple"; // CAMBIAR ESTE COLOR A UNO MAS ADECUADO.
-                    });
-            
-                    contenedor.appendChild(bt);
-                });
-
-            } else {
-                alert("Sin Versiones Anteriores");
-            }
-        } else {
-            alert("Error en la respuesta de la API.");
-        }
-    } catch (error) {
+    }
+    catch (error) {
         console.error("Error:", error);
         alert("Ocurrió un error al conectar con la API.");
     }
 }
 
-//document.getElementById("HomePsicologo").addEventListener("click", obtenerDatos);
+// Asegúrate de llamar a la función cuando el DOM esté cargado (ME FALTABA ESTA CUECA')
+document.addEventListener('DOMContentLoaded', ObtenerExpedientes);
+
+async function enviarUsuario() {
+    
+    if(!userSeleccionado){
+        alert("selecciona un usuario, o un fucking id");
+        return;
+    }
+
+    try {
+        const respuesta = await fetch('https://jsonplaceholder.typicode.com/users', {
+            method: 'POST',
+            headers:{
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(userSeleccionado)
+        });
+
+        const resultado = await respuesta.json();
+        console.log("respuesta del servidor:", resultado);
+        
+    } catch (error) {
+        console.error("error al enviar usuario.", Error);
+    }
+}
