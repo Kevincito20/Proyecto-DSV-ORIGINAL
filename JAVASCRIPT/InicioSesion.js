@@ -71,7 +71,7 @@ async function obtenerDatos(idPsicologo) {
                 alert("Datos no encontrados.");
             }
         } else {
-            alert("Error en la respuesta de la API.");z
+            alert("Error en la respuesta de la API.");
         }
     } catch (error) {
         console.error("Error:", error);

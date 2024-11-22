@@ -1,30 +1,40 @@
-//ESTO HACE QUE EL MENU SE DESPLIEGUE Y SE OCULTE
 const menuBoton = document.getElementById('menuBoton'); 
 const menu = document.getElementById('menu');
 const cerrarMenu = document.getElementById('cerrar'); 
 
+// Funciones para abrir y cerrar el menú
 function AbrirMenu() {
     menu.classList.add('active'); 
 }
 function CerrarMenu() {
     menu.classList.remove('active'); 
 }
+
+// Listeners para los botones
 menuBoton.addEventListener('click', AbrirMenu);
 cerrarMenu.addEventListener('click', CerrarMenu);
 
 
 async function obtenerDatos() {
+    const url = "https://tu-api-url.com/api/datosPacientes";
+    const idPsicologo = localStorage.getItem('idPsicologo'); 
 
-    const validacion = await VisualizarDocumentos();
-    if (!validacion) {
-        return; 
+    if (!idPsicologo) {
+        alert("ID del psicólogo no encontrado.");
+        return;
     }
 
-    const url = "https://tu-api-url.com/api/datosPacientes";
+    const data = {
+        idPsicologo: idPsicologo
+    };
 
     try {
         const respuesta = await fetch(url, {
-            headers: { 'Content-Type': 'application/json' }
+            method: 'POST', 
+            headers: { 
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data) 
         });
 
         if (respuesta.ok) {
@@ -35,9 +45,7 @@ async function obtenerDatos() {
 
                 const tablaPacientes = document.getElementById("tabla-pacientes");
 
-
                 respuestaJson.pacientes.forEach((paciente) => {
-                    
                     const fila = document.createElement("tr");
                     fila.onclick = () => window.location.href = paciente.url;
 
@@ -66,9 +74,5 @@ async function obtenerDatos() {
         alert("Ocurrió un error al conectar con la API.");
     }
 }
-
-document.getElementById("HomePsicologo").addEventListener("click", obtenerDatos);
-
-
 
 
