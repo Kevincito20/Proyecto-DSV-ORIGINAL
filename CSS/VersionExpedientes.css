@@ -205,66 +205,53 @@ img{
     margin-top: 30px;
 }
 
-/* ESTILO DEL FOOTER */
-footer {
+.footer-container {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    padding: 37px 20px;
-    margin-top: 40px;
-    background-color: #fff;
-    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);  
+    padding: 20px;
+    background-color: #681A5D;
 }
 
-.descInferior {
+.institutos{
     display: flex;
-    align-items: center;
-    gap: 30px;
-    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 20px;
 }
 
-.descInferior img {
-    height: 100px;
-    width: auto;
-}
-
-.textoInferior {
-    flex: 1;
-    margin-right: 100px;
-    line-height: 1.6;
-}
-
-
-
-/* ESTILOS DE LINKS */
-a {
+.institutos a{
+    color: white;
     text-decoration: none;
-    color: black;
-    font-size: 0.9em;
+    margin: 5px;
+    font-size: 15px;
+}
+
+.footer {
     display: flex;
-    align-items: center;
-    gap: 5px;
-    transition: all 0.3s ease;
+    flex-direction: row;
 }
 
-#linkTitulo:hover {
-    color: #285AEB;
-
+.footer img{
+    width: 100px;
+    height: 100px;
 }
 
-#Linkbusqueda:hover {
-    background: #285AEB;
-
+.redes-sociales {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
 }
 
-#linkredes:hover {
-    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-    background-clip: text;
-    color: transparent;
+.redes-sociales a {
+    margin-bottom: 10px;
 }
 
-#linkContacto:hover {
-    background: rgb(4, 243, 4);
-    background-clip: text;
-    color: transparent;
+.redes-sociales i{
+    font-size: 30px;
+    color: white;
+    margin: 10px;
+    transition: color 0.3s ease;
 }
+
 

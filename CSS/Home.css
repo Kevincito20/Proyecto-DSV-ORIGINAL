@@ -9,8 +9,13 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 35px;
     background-color: #681A5D;
+}
+
+h1{
+    margin:20px;
+    text-align: center;
 }
 
 .Secciones {
@@ -19,26 +24,26 @@ header{
 }
 
 .Secciones img {
-    max-height: 75px; 
-    margin-right: 60px; 
+    max-height: 100px; 
+    margin-right: 100px; 
 }
 
 .Secciones ul {
     list-style: none; 
     display: flex; 
-    margin: 0;
-    padding: 0;
+    gap: 50px;
 }
 
 .Secciones ul li {
     margin-right: 20px; 
+    padding: 20px;
 }
 
 .Secciones ul li a {
     text-decoration: none;
     color: white;
     font-weight: bold;
-    transition: color 0.3s ease; 
+    font-size: 25px;
 }
 
 .Secciones ul li a:hover {
@@ -55,11 +60,23 @@ header{
     transition: color 0.3s ease;
 }
 
+.iconos-header{
+    display: flex;
+    gap: 20px;
+    color: white;
+
+}
+
+.iconos-header a{
+    color: white;
+    text-decoration: none;
+    font-size: 35px;
+    margin-left: 10px;
+}
 
 .icono-google img {
-    width: 24px; 
-    height: 24px;
-    margin-left: 8px; 
+    width: 35px;
+    color: white;
 }
 
 
@@ -79,6 +96,12 @@ header{
     border-radius: 10px;
     justify-content: center;
     align-items: center;
+}
+
+iframe{
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
 }
 
 .noticia img{
@@ -127,7 +150,7 @@ header{
     color: white;
     text-decoration: none;
     margin: 5px;
-    font-size: 15px;
+    font-size: 18px;
 }
 
 .footer {
@@ -138,6 +161,7 @@ header{
 .footer img{
     width: 100px;
     height: 100px;
+    justify-content: center;
 }
 
 .redes-sociales {
